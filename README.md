@@ -9,11 +9,9 @@ Welcome to Zerodha! This is a full-stack MERN-based clone of the popular stock t
 
 * [Technologies](#-technologies)
 * [Packages & Libraries Used](#-packages--libraries-used)
-* [Getting Started](#-getting-started)
 * [Setup](#️-setup)
 * [Features](#-features)
 * [Demo & Screenshots](#-demo--screenshots)
-* [Acknowledgments](#-acknowledgments)
 * [License](#-license)
 
 ---
@@ -35,8 +33,6 @@ Welcome to Zerodha! This is a full-stack MERN-based clone of the popular stock t
 | Package / Library      | Purpose                       |
 | ---------------------- | ----------------------------- |
 | Bootstrap 5.3          | Responsive design             |
-| Tailwind CSS + DaisyUI | Theme and UI customization    |
-| Material UI            | UI Components                 |
 | Express.js             | Backend framework             |
 | Mongoose               | MongoDB object modeling       |
 | Bcrypt                 | Password hashing              |
@@ -49,8 +45,6 @@ Welcome to Zerodha! This is a full-stack MERN-based clone of the popular stock t
 | Body-Parser            | Middleware for request bodies |
 
 ---
-
-## 🚀 Getting Started
 
 ### Clone the repository
 
