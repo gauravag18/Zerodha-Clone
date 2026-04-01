@@ -46,6 +46,68 @@ Welcome to Zerodha! This is a full-stack MERN-based clone of the popular stock t
 
 ---
 
+## 🏗️ Architecture & Flow Diagrams
+
+### Architecture Diagram
+
+```mermaid
+graph TD
+    Client[Client Browser]
+    
+    subgraph "Frontend Applications"
+        Front[Frontend Web - React.js]
+        Dash[Dashboard Web - React.js]
+    end
+    
+    subgraph "Backend System"
+        API[Backend Node.js API - Express.js]
+        Auth[Security & Auth - JWT/Bcrypt]
+    end
+    
+    subgraph "Data Layer"
+        DB[(MongoDB)]
+    end
+    
+    Client -->|Browse Main Site| Front
+    Client -->|Manage Dashboard| Dash
+    
+    Front -.->|API Requests| API
+    Dash -.->|API Requests| API
+    
+    API <-->|Verify| Auth
+    API <-->|Read / Write| DB
+```
+
+### Application Flow
+
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant C as Client (Frontend/Dashboard)
+    participant B as Backend (Express API)
+    participant D as Database (MongoDB)
+
+    U->>C: Access Application
+    alt Not Logged In
+        U->>C: Provide Credentials
+        C->>B: POST /login or /register
+        B->>D: Verify/Create User Object
+        D-->>B: Return User Record
+        B-->>C: Return JSON + JWT Token
+        C-->>U: Process Login & Redirect
+    else Logged In
+        U->>C: View Dashboard / Assets
+        C->>B: API Request + JWT Header
+        B->>B: Validate Token
+        B->>D: Query Requested Data
+        D-->>B: Return Document Data
+        B-->>C: JSON Response
+        C-->>U: Render UI Components
+    end
+```
+
+---
+
 ### Clone the repository
 
 ```bash
